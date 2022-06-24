@@ -1,25 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import CustomLayout from "components/common/CustomLayout";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { publicRoutes } from "routes";
+import { constants } from "utils/constants";
+
+interface AppRouteProps {
+  isProtected: Boolean;
+  [x: string]: any;
+}
+
+const AppRoute = ({ isProtected, children, ...rest }: AppRouteProps) => {
+  console.log("rest", rest);
+  if (isProtected && !localStorage.getItem(constants.AUTH_TOKEN)) {
+    return (
+      <Navigate
+        to="/login"
+        // state={{ from: props.location }}
+        replace
+      />
+    );
+  } else {
+    return <CustomLayout>{children}</CustomLayout>;
+  }
+};
 
 function App() {
+  console.log(publicRoutes);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        {publicRoutes.map(({ Component, path, ...rest }, i) => (
+          <Route
+            path={path}
+            element={
+              <AppRoute isProtected={false}>
+                <Component />
+              </AppRoute>
+            }
+          />
+        ))}
+      </Routes>
+    </BrowserRouter>
   );
 }
 
