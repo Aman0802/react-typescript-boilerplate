@@ -1,10 +1,22 @@
-# Getting Started with Create React App
+# React Typescript Boilerplate
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and has [ESLint](https://eslint.org/), [Prettier](https://prettier.io/), [Redux Toolkit](https://redux-toolkit.js.org/), [Internalization](https://react.i18next.com/) and [webpack-bundler-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) setup.
 
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `npm run lint`
+Identifies the issues according to the eslint rules setup
+
+### `npm run lint:fix`
+Identifies and tries to resolve the issues according to the eslint rules setup
+
+### `npm run format`
+Formats the file according to the prettier config mentioned in .prettierc
+
+### `bundle-analytics`
+Open a webpage and visualizes every bundle and their sizes.
 
 ### `npm start`
 
