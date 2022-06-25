@@ -1,5 +1,5 @@
-import { MdOutlineDashboard } from 'react-icons/md'
 import Logo from 'assets/Logo.png'
+import { MdOutlineDashboard } from 'react-icons/md'
 import SidebarItem from './SidebarItem'
 
 const Sidebar = () => {

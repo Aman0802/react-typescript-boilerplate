@@ -1,7 +1,6 @@
-import { TbStack2 } from 'react-icons/tb'
-
-import DashboardAnalyticsCard from 'components/DashboardAnalyticsCard'
 import CustomBreadCrumbs from 'components/common/CustomBreadCrumbs'
+import DashboardAnalyticsCard from 'components/DashboardAnalyticsCard'
+import { TbStack2 } from 'react-icons/tb'
 
 const HomePage = () => {
   const breadcrumbData = [

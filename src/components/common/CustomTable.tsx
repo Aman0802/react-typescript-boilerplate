@@ -1,6 +1,4 @@
-import React from 'react'
 import { useTable } from 'react-table'
-
 import './CustomTable.css'
 
 interface CustomTableProps {

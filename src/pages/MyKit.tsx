@@ -1,16 +1,15 @@
-import { useMemo, useState, useEffect } from 'react'
-import axios from 'axios'
-import { useDispatch, useSelector } from 'react-redux'
-import { useTranslation } from 'react-i18next'
-import i18next from 'i18next'
-import '../translations/i18n'
-
-import { RootState } from 'redux/store'
-import { decrement, increment } from 'redux/counter/counterSlice'
-import CustomTable from 'components/common/CustomTable'
-import CustomBreadCrumbs from 'components/common/CustomBreadCrumbs'
 import { Box, Button, Divider } from '@mui/material'
+import axios from 'axios'
+import CustomBreadCrumbs from 'components/common/CustomBreadCrumbs'
 import CustomInput from 'components/common/CustomInput'
+import CustomTable from 'components/common/CustomTable'
+import i18next from 'i18next'
+import { useEffect, useMemo, useState } from 'react'
+import { useTranslation } from 'react-i18next'
+import { useDispatch, useSelector } from 'react-redux'
+import { decrement, increment } from 'redux/counter/counterSlice'
+import { RootState } from 'redux/store'
+import '../translations/i18n'
 
 const Genres = ({ values }: any) => {
   // Loop through the array and create a badge-like component instead of a comma-separated string
