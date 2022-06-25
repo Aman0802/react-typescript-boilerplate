@@ -15,7 +15,7 @@ Identifies and tries to resolve the issues according to the eslint rules setup
 ### `npm run format`
 Formats the file according to the prettier config mentioned in .prettierc
 
-### `bundle-analytics`
+### `npm run bundle-analytics`
 Open a webpage and visualizes every bundle and their sizes.
 
 ### `npm start`
