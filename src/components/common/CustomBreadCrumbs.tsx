@@ -1,7 +1,7 @@
-import { Breadcrumbs, Link } from "@mui/material";
+import { Breadcrumbs, Link } from '@mui/material'
 
 interface BreadCrumb {
-  text: string,
+  text: string
   link?: string
 }
 
@@ -11,12 +11,12 @@ interface CustomBreadCrumbsProps {
 
 const CustomBreadCrumbs = ({ breadcrumbData }: CustomBreadCrumbsProps) => {
   return (
-    <Breadcrumbs aria-label="breadcrumb">
-      <ol className="flex">
+    <Breadcrumbs aria-label='breadcrumb'>
+      <ol className='flex'>
         {breadcrumbData?.map((breadcrumb, i) => (
           <li key={breadcrumb.text}>
-            {"link" in breadcrumb ? (
-              <Link underline="hover" color="inherit" href={breadcrumb.link}>
+            {'link' in breadcrumb ? (
+              <Link underline='hover' color='inherit' href={breadcrumb.link}>
                 {breadcrumb.text}
               </Link>
             ) : (
@@ -28,7 +28,7 @@ const CustomBreadCrumbs = ({ breadcrumbData }: CustomBreadCrumbsProps) => {
         ))}
       </ol>
     </Breadcrumbs>
-  );
-};
+  )
+}
 
-export default CustomBreadCrumbs;
+export default CustomBreadCrumbs

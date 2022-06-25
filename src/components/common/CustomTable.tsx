@@ -1,11 +1,11 @@
-import React from "react";
-import { useTable } from "react-table";
+import React from 'react'
+import { useTable } from 'react-table'
 
-import "./CustomTable.css";
+import './CustomTable.css'
 
 interface CustomTableProps {
-  columns: any;
-  data: any;
+  columns: any
+  data: any
 }
 
 const CustomTable = ({ columns, data }: CustomTableProps) => {
@@ -18,38 +18,32 @@ const CustomTable = ({ columns, data }: CustomTableProps) => {
   } = useTable({
     columns,
     data,
-  });
+  })
   return (
     <table {...getTableProps()}>
       <thead>
         {headerGroups.map((headerGroup, idx) => (
           <tr {...headerGroup.getHeaderGroupProps()}>
             {headerGroup.headers.map((column, idx) => (
-              <th {...column.getHeaderProps()}>
-                {column.render("Header")}
-              </th>
+              <th {...column.getHeaderProps()}>{column.render('Header')}</th>
             ))}
           </tr>
         ))}
       </thead>
       <tbody {...getTableBodyProps()}>
         {rows.map((row, i) => {
-          prepareRow(row);
+          prepareRow(row)
           return (
             <tr {...row.getRowProps()}>
               {row.cells.map((cell, idx) => {
-                return (
-                  <td {...cell.getCellProps()}>
-                    {cell.render("Cell")}
-                  </td>
-                );
+                return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
               })}
             </tr>
-          );
+          )
         })}
       </tbody>
     </table>
-  );
-};
+  )
+}
 
-export default CustomTable;
+export default CustomTable

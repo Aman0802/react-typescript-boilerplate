@@ -1,9 +1,9 @@
-import { useParams } from "react-router-dom";
+import { useParams } from 'react-router-dom'
 
 const ViewOrganizationPage = () => {
-  const params = useParams();
-  console.log("params", params);
-  return <div>Organization Details Page</div>;
-};
+  const params = useParams()
+  console.log('params', params)
+  return <div>Organization Details Page</div>
+}
 
-export default ViewOrganizationPage;
+export default ViewOrganizationPage

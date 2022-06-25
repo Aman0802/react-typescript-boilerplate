@@ -1,30 +1,30 @@
-import CustomLayout from "components/common/CustomLayout";
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import { publicRoutes } from "routes";
-import { constants } from "utils/constants";
+import CustomLayout from 'components/common/CustomLayout'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import { publicRoutes } from 'routes'
+import { constants } from 'utils/constants'
 
 interface AppRouteProps {
-  isProtected: Boolean;
-  [x: string]: any;
+  isProtected: Boolean
+  [x: string]: any
 }
 
 const AppRoute = ({ isProtected, children, ...rest }: AppRouteProps) => {
-  console.log("rest", rest);
+  console.log('rest', rest)
   if (isProtected && !localStorage.getItem(constants.AUTH_TOKEN)) {
     return (
       <Navigate
-        to="/login"
+        to='/login'
         // state={{ from: props.location }}
         replace
       />
-    );
+    )
   } else {
-    return <CustomLayout>{children}</CustomLayout>;
+    return <CustomLayout>{children}</CustomLayout>
   }
-};
+}
 
 function App() {
-  console.log(publicRoutes);
+  console.log(publicRoutes)
   return (
     <BrowserRouter>
       <Routes>
@@ -40,7 +40,7 @@ function App() {
         ))}
       </Routes>
     </BrowserRouter>
-  );
+  )
 }
 
-export default App;
+export default App
